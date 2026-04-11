@@ -1,16 +1,30 @@
 # C3: Channelized, Common-State, Cubic-Readout-Tensor SSM
 
-The only structural change is that C becomes a 3-dimensional tensor.
-Other components such as A and B remain ordinary 2-dimension matrices.
-Any additional structures are not essential; the core of C3 lies solely in the 3D C-tensor.
+C3 (Channelized, Common-State, Cubic-Readout-Tensor SSM) is an extension of the standard State Space Model (SSM) architecture.  
+The key structural modification is that the output projection C becomes a 3‑dimensional tensor, while the state transition matrix A and input matrix B remain conventional 2‑dimensional matrices.
 
+No additional architectural constraints are required; the essence of C3 lies solely in the 3D C‑tensor.
 
-# Conpornent
-## Mult-View SSM
-The A and B matrices of this SSM are HiPPO matrices. The C-tensor makes several output from multiple viewpoint.
+## Conpornent
+### 1. Multi‑View SSM
+- The matrices A and B are constructed using HiPPO.
+- The C‑tensor enables the model to generate multiple outputs from different viewpoints.
+- Each slice of the C‑tensor acts as an independent readout head, providing diverse representations of the shared state.
 
-## Attention model
-The outputs of SSM and a recent small amount of raw data are both given to Attention model. Attention model combines these inputs and integrates them into a vector.
+This multi‑view mechanism enhances the expressive power of the SSM without altering its core dynamics.
 
-## MLP
-Role of this MLP is similar to that of FFN in Transformer. 
+### 2. Attention Model
+The outputs from the multi‑view SSM, together with a small window of recent raw input data, are fed into an Attention module.
+
+The Attention module:
+- Integrates long‑term information captured by the SSM  
+- Combines it with short‑term, high‑resolution raw input  
+- Produces a unified feature vector that balances both memory scales
+
+### 3. MLP
+The MLP plays a role similar to the Feed‑Forward Network (FFN) in Transformers.
+
+Its responsibilities include:
+- Applying nonlinear transformations  
+- Expanding representational capacity  
+- Mapping the integrated features to the final output space  
