@@ -21,18 +21,19 @@ The state transition matrix A and input matrix B remain conventional 2‑dimensi
 
 ### 3. Output structure
 
+A single linear projection is simply not enough.  
+The structure of a HiPPO state space forces the readout to be more complex.
+
+
 #### C-tensor
 - The C‑tensor enables the model to generate multiple outputs from different viewpoints.
 - Each slice of the C‑tensor acts as an independent readout head, providing diverse representations of the shared state.
 - This multi‑view mechanism enhances the expressive power of the SSM without altering its core dynamics.
 
 #### Attention Model
-- The outputs from the multi‑view SSM are fed into an Attention module.
-
-The Attention module:
+- The outputs from the multi‑view SSM are fed into an Attention model.
 - Integrates long‑term information captured by the SSM  
-- Combines it with short‑term, high‑resolution raw input  
-- Produces a unified feature vector that balances both memory scales
+- Produces a unified feature vector
 
 #### Scalar-gain
 - It adjusts the magnitude.
