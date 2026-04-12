@@ -8,7 +8,7 @@ These three mechanisms together constitute the entire readout structure, rather 
  
 The state transition matrix A and input matrix B remain conventional 2‑dimensional matrices.
 
-## Conpornent
+## Components
 ### 1. Input structure
 
 #### B-matrix
