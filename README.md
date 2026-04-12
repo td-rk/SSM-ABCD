@@ -2,7 +2,9 @@
 
 C3 (Channelized, Common-State, Cubic-Readout-Tensor SSM) is a State Space Model architecture that improves the output projection.  
 
-The process for obtaining output from the state space was decomposed into three components. Output directions were obtained from several output matrices. Attention was used to combine these outputs into one. The magnitude was adjusted using a scalar gain.
+The process for obtaining output from the state space was decomposed into three components. Output directions were obtained from several output matrices. Attention was used to combine these outputs into one. The magnitude was adjusted by a scalar gain.
+
+These three mechanisms together constitute the entire readout structure, rather than being added independently.
  
 The state transition matrix A and input matrix B remain conventional 2‑dimensional matrices.
 
