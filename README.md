@@ -38,12 +38,6 @@ The structure of a HiPPO state space forces the readout to be more complex.
 #### Scalar-gain
 - It adjusts the magnitude.
 
-## Summary
-C3 SSM introduces:
-- A 3D C‑tensor enabling multi‑view readout  
-- Standard HiPPO‑based A and B matrices  
-- An Attention module that fuses long‑term SSM memory with short‑term raw data  
-
 ## References
 - Gu, A., et al. "Efficiently Modeling Long Sequences with Structured State Spaces." (S4)
 - Gu, A., et al. "HiPPO: Recurrent Memory with Optimal Polynomial Projections."
