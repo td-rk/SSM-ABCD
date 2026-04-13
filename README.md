@@ -30,8 +30,8 @@ The structure of a HiPPO state space forces the readout to be more complex.
 - Each slice of the C‑tensor acts as an independent readout head, providing diverse representations of the shared state.
 - This multi‑view mechanism enhances the expressive power of the SSM without altering its core dynamics.
 
-#### Attention Model
-- The outputs from the multi‑view SSM are fed into an Attention model.
+#### Attention
+- The outputs from the multi‑view SSM are fed into an Attention.
 - Integrates long‑term information captured by the SSM  
 - Produces a unified feature vector
 
